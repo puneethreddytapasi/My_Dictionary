@@ -1,65 +1,89 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Reset and base styles */
 body {
-    display: grid;
-    place-items: center;
-    height: 100vh; /* changed from 150vh */
-    background-color: lightblue;
-    overflow: hidden; /* prevents scroll */
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
 }
 
-.card {
-    width: auto;
-    background-color: papayawhip;
-    padding: 3rem 2rem;
-    border-radius: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    font-size: 20px;
+/* Main container */
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  width: 90%;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.property {
-    color: black;
-    display: flex;
-    align-items: flex-start;
-    margin: 1rem 0;
-    column-gap: 1rem;
-}
-
+/* Search form */
 .search-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 30vw;
-    height: 8vh;
-    background-color: honeydew;
-    border-radius: 1rem;
-    margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+  margin-bottom: 24px;
 }
 
-.search-form input,
-.search-form button {
-    flex-basis: 70%;
-    font-size: 1rem;
-    padding: 0.10rem 3rem;
-    border: none;
-    outline: none;
-    background-color: transparent;
+.search-form input[type="text"] {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .search-form button {
-    padding: 9px 8px;
-    flex-basis: 30%;
-    cursor: pointer;
-    border-left: 2px solid #555;
-    background-color: honeydew;
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .search-form button:hover {
-    background-color: darkgrey;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: #0056b3;
+}
+
+/* Card layout for result */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  background-color: #fafafa;
+  margin-top: 16px;
+}
+
+/* Individual properties inside card */
+.property {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+  font-size: 1rem;
+  flex-wrap: wrap;
+}
+
+.property span:first-child {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Responsive design */
+@media (min-width: 600px) {
+  .search-form {
+    flex-direction: row;
+  }
+
+  .search-form input[type="text"] {
+    flex: 1;
+  }
+
+  .search-form button {
+    width: auto;
+  }
 }
