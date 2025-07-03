@@ -1,29 +1,32 @@
-/* Reset and base styles */
+/* Reset & base styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f0f0f0;
   color: #222;
 }
 
 /* Main container */
 .container {
   max-width: 600px;
+  width: 90%;
   margin: 40px auto;
   padding: 20px;
-  width: 90%;
-  background-color: #fff;
+  background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Search form */
+/* Search Form */
 .search-form {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  align-items: stretch;
   margin-bottom: 24px;
 }
 
@@ -33,7 +36,6 @@ body {
   border: 1px solid #ccc;
   border-radius: 8px;
   width: 100%;
-  box-sizing: border-box;
 }
 
 .search-form button {
@@ -50,30 +52,28 @@ body {
   background-color: #0056b3;
 }
 
-/* Card layout for result */
+/* Card Styling */
 .card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 16px;
   background-color: #fafafa;
-  margin-top: 16px;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-top: 20px;
 }
 
-/* Individual properties inside card */
 .property {
   display: flex;
-  justify-content: space-between;
-  margin: 8px 0;
-  font-size: 1rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
 .property span:first-child {
   font-weight: bold;
+  margin-bottom: 4px;
   color: #333;
 }
 
-/* Responsive design */
+/* Responsive for tablet/laptop */
 @media (min-width: 600px) {
   .search-form {
     flex-direction: row;
@@ -85,5 +85,15 @@ body {
 
   .search-form button {
     width: auto;
+  }
+
+  .property {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .property span:first-child {
+    margin-bottom: 0;
   }
 }
